@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Archive Investigator</title>
+{% if user %}
+  <h1>Hello {{ user }}!</h1>
+  <a href="archive">Inspect an archive</a>
+  <br>
+  <a href="logout">Log out</a>
+{% else %}
+  <h1>Hello there!</h1>
+  <a href="login">Log in</a>
+  <br>
+  <a href="register">Register</a>
+{% endif %}
