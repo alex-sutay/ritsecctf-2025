@@ -2,10 +2,10 @@
 Author: Alex Sutay
 
 ## Challenge overview
-This is sort of a web challenge, but the vulnerability is in busybox so it might be better categorized as misc.
+This is sort of a web challenge, but the vulnerability is in cpio so it might be better categorized as misc.
 You're given a site where you can view the contents of a cpio archive, as long as you're logged in.
 Even better, you can view the flag if you're logged in as admin.
-The exploit is that old busybox cpio will follow symlinks, allowing you to add an administrative user.
+The exploit is that cpio will follow `..` in paths, allowing you to add an administrative user.
 
 ## Deployment
 This challenge can be run via docker, so deployment should be easy.
@@ -17,13 +17,12 @@ To start the challenge, run `docker run -p 8000:8000 --privileged $(docker build
 Provide participants with the source code `archive_investigator.py`, a copy of the `Dockerfile`, and the html templates.
 All of them will be bundled into `upload_issues.zip` with a fake flag when you run `build.sh`:
 this is what you should provide participants.
-The `Dockerfile` is important so the participants know that the challenge involves the old version of busy box.
+Alternatively, you can just provide the `archive_investigator.py` file, it should have evything they need.
+However, the Upload Issues 2 challenge will provide the dockerfile, so providing the whole zip gives better parity of the two.
 There doesn't need to be any other hints in the description, so feel free to make it whatever you want, or use this one:
 "This site lets you look at cpio archives. If only we had an admin account, we could look at the flag..."
 
-This challenge is fairly easy.
-If the participants look up busybox, cpio, and vulnerability, they should be able to find the CVE explaining how to do it.
-Then they just have to make the payload and use it, log in, and bam they're done.
+This challenge is fairly easy, it's just directory traversal in the cpio command.
 
 ## Challenge Details
 The auth is simple: there is a directory of json files named with usernames containing passwords and auth levels.
