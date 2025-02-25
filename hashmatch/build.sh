@@ -1,5 +1,5 @@
 # compile the challenge
-gcc -no-pie -o hashmatch/hashmatch hashmatch.c
+gcc -no-pie -fno-stack-protector -o hashmatch/hashmatch hashmatch.c
 # zip the challenge to provide to participants
 zip -r hashmatch.zip hashmatch
 # copy the challenge directory for deployment
