@@ -1,4 +1,6 @@
 # Hashmatch
+Author: Alex Sutay
+
 ## Challenge overview
 This is a PWN challenge using ROP.
 When run, it appears as though you have to reverse an MD5 to get a flag.
