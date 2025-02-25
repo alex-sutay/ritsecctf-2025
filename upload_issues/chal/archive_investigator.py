@@ -142,7 +142,6 @@ def post_archive():
             return redirect(url_for('get_archive'))
         rtn = 'MD5 of all files:<br>' + results.stdout.replace(f'uploads/{tmpname}/', '').replace(f'{tmpname}.cpio', file.filename).replace('\n', '<br>')
         return rtn
-        return f'results:<br>{results.stdout}<br>stderr:<br>{results.stderr}<br>retcode:<br>{results.returncode}'
         
     return redirect(url_for('get_archive'))
 
