@@ -7,7 +7,7 @@
 #define FAILURE -1
 #define MD5_CMD_FMT "md5sum %s | grep %s"
 #define RM_CMD_FMT "rm %s"
-#define FNAME_FMT "tmp-%d.txt"
+#define FNAME_FMT "/tmp/tmp-%d.txt"
 
 // freebies ;) don't say I gave you nothing
 __asm__("pop %rdi\n\t"
